@@ -1,0 +1,6 @@
+server:
+  port: 8090
+  tomcat:
+    connection-timeout: 1000
+
+
