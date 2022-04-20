@@ -3,4 +3,6 @@ server:
   tomcat:
     connection-timeout: 1000
 
-
+spring:
+  profiles:
+    active: test
