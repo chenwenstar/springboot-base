@@ -4,5 +4,18 @@ server:
     connection-timeout: 1000
 
 spring:
+  application:
+    name: base
   profiles:
     active: test
+
+  datasource:
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: ${spring.datasource.hikari.maximum-pool-size}
+      minimum-idle: ${spring.datasource.hikari.minimum-idle}
+      auto-commit: true
+      pool-name: ${spring.datasource.hikari.pool-name}

@@ -7,4 +7,13 @@ package com.chenwen.springbootbase.exception;
 public class BaseException extends Exception{
     private int code;
 
+    /**
+     * 重写 fillInStackTrace
+     */
+    @Override
+    public Throwable fillInStackTrace(){
+        return this;
+    }
+
+
 }

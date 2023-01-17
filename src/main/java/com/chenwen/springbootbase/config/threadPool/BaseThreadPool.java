@@ -15,11 +15,11 @@ public class BaseThreadPool {
     private static ThreadPoolExecutor EXECUTOR = null;
 
 
-    static ThreadPoolExecutor getPoolExecutor() {
+    public static ThreadPoolExecutor getPoolExecutor() {
         if (null == EXECUTOR) {
             synchronized (BaseThreadPool.class) {
                 if (null == EXECUTOR) {
-                    EXECUTOR = new ThreadPoolExecutor(CORE_SIZE, MAX_SIZE, 100, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(1000), new BaseThreadFactory(POOL_NAME));
+                    EXECUTOR = new ThreadPoolExecutor(CORE_SIZE, MAX_SIZE, 100, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(1000), new BaseThreadFactory());
                 }
             }
         }
